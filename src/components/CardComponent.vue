@@ -12,6 +12,10 @@ export default {
     top: {
       type: Number,
       required: true
+    },
+    transitionDelay: {
+      type: Number,
+      required: true
     }
   },
   data() {
@@ -34,7 +38,7 @@ export default {
 
 
 <template>
-  <div class="card" :style="{ 'transform': 'rotate(' + randomDegree + 'deg)', 'left': left + '%', 'top': top + '%'}">{{ msg }}</div>
+  <div class="card" :style="{ 'transform': 'rotate(' + randomDegree + 'deg)', 'left': left + '%', 'top': top + '%', 'transition-delay': transitionDelay + 's'}">{{ msg }}</div>
 </template>
 
 <style scoped lang="scss">
@@ -51,7 +55,6 @@ export default {
   user-select: none;
   translate: -50% -50%;
   transition: top 1.5s;
-  
   filter: drop-shadow(0 0 0.75rem black);
 }
 </style>
